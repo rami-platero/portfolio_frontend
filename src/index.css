@@ -1,1 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-lightblueviolet: #dcdfff;
+  --color-blueviolet: #9da5ff;
+  --color-darkblueviolet: #7883ff;
+  --color-darkcolor: #131a30;
+  --color-blueviolet2: #4a56dd;
+
+  --animate-slide-in: slideIn 300ms ease-in-out;
+  --animate-slide-out: slideOut 300ms ease-in-out;
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@layer base {
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  html::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  html::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #9092ff;
+  }
+
+  #root {
+    background: linear-gradient(
+      0deg,
+      rgb(230, 230, 255) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
