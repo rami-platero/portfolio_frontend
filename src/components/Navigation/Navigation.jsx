@@ -17,7 +17,7 @@ const menuAnimation = {
 };
 
 const linkClasses =
-  "cursor-pointer text-black no-underline transition duration-200 ease-in-out hover:text-blueviolet max-[780px]:hover:text-black";
+  "block cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-darkcolor/70 no-underline transition-colors duration-200 hover:bg-lightblueviolet hover:text-darkcolor max-[780px]:px-3 max-[780px]:py-2 max-[780px]:text-base";
 
 const Navigation = () => {
   const { projectsRef, skillsRef, contactRef } = useContext(scrollContext);
@@ -47,19 +47,20 @@ const Navigation = () => {
 
   return (
     <header>
-      <nav className="fixed top-4 right-0 bottom-0 left-0 z-[9] mx-auto flex max-h-[30px] w-full max-w-fit items-center rounded-2xl border-2 border-[rgb(70,70,70)] bg-white p-4 backdrop-blur-[10px] select-none max-[780px]:top-0 max-[780px]:max-h-[50px] max-[780px]:max-w-full max-[780px]:flex-col max-[780px]:items-start max-[780px]:justify-center max-[780px]:rounded-none max-[780px]:border-none max-[780px]:bg-darkblueviolet">
+      <nav className="fixed top-5 right-0 left-0 z-[9] mx-auto flex w-full max-w-fit items-center rounded-full border border-darkcolor/10 bg-white p-1.5 shadow-[0_8px_30px_rgba(19,26,48,0.08)] select-none max-[780px]:top-0 max-[780px]:max-w-full max-[780px]:items-start max-[780px]:rounded-none max-[780px]:border-x-0 max-[780px]:border-t-0 max-[780px]:p-3 max-[780px]:shadow-none">
         <button
-          className="hidden cursor-pointer flex-col items-center border-none max-[780px]:flex"
+          className="hidden cursor-pointer items-center justify-center rounded-full p-2 text-darkcolor transition-colors duration-200 hover:bg-lightblueviolet max-[780px]:flex"
           onClick={handleButton}
+          aria-label="Toggle menu"
         >
           {isOpen ? (
-            <IoMdClose className="h-8 w-8 bg-darkblueviolet" />
+            <IoMdClose className="h-6 w-6" />
           ) : (
-            <GiHamburgerMenu className="h-8 w-8 bg-darkblueviolet" />
+            <GiHamburgerMenu className="h-6 w-6" />
           )}
         </button>
         <ul
-          className={`flex w-full list-none gap-8 text-[0.9rem] max-[780px]:absolute max-[780px]:top-[3.1rem] max-[780px]:left-0 max-[780px]:z-[-2] max-[780px]:flex-col max-[780px]:bg-blueviolet max-[780px]:p-4 max-[780px]:text-base max-[780px]:font-semibold ${menuAnimation[animationState]}`}
+          className={`flex w-full list-none items-center gap-1 max-[780px]:absolute max-[780px]:top-full max-[780px]:left-0 max-[780px]:mt-2 max-[780px]:w-full max-[780px]:flex-col max-[780px]:items-stretch max-[780px]:rounded-2xl max-[780px]:border max-[780px]:border-darkcolor/10 max-[780px]:bg-white max-[780px]:p-2 max-[780px]:shadow-[0_8px_30px_rgba(19,26,48,0.08)] ${menuAnimation[animationState]}`}
         >
           <li>
             <a
