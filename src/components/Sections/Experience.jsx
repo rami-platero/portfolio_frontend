@@ -13,7 +13,7 @@ const stack = [
   "Next.js",
   "React Native",
   "Expo",
-  "AWS S3",
+  "AWS",
   "Terraform",
   "Figma",
 ];
