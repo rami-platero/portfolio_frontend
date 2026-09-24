@@ -17,7 +17,7 @@ import PawsitiveAdoptingImage from "../../assets/img/pawsitiveadopting.png";
 import VNFImage from "../../assets/img/vnf.png";
 
 const imageClasses =
-  "mx-auto aspect-[2/1] w-full max-w-[600px] border border-outline object-cover transition duration-200 ease-in-out";
+  "mx-auto aspect-[2/1] w-full max-w-[600px] border border-outline object-cover transition duration-200 ease-in-out dark:brightness-[0.85]";
 
 const infoClasses =
   "mx-auto flex w-full max-w-[500px] flex-col justify-between gap-4 p-4";

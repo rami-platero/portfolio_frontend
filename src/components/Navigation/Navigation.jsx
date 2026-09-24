@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
+import { FiMoon, FiSun } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { scrollContext } from "../../context/ScrollContext";
+import { useTheme } from "../../hooks/useTheme";
 
 const AnimationState = {
   closing: "closing",
@@ -19,9 +21,13 @@ const menuAnimation = {
 const linkClasses =
   "block cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-muted no-underline transition-colors duration-200 hover:bg-accent-soft hover:text-text max-[780px]:px-3 max-[780px]:py-2 max-[780px]:text-base";
 
+const iconButtonClasses =
+  "flex cursor-pointer items-center justify-center rounded-full p-2 text-text transition-colors duration-200 hover:bg-accent-soft";
+
 const Navigation = () => {
   const { projectsRef, skillsRef, experienceRef, contactRef } =
     useContext(scrollContext);
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [animationState, setAnimationState] = useState(AnimationState.closed);
 
@@ -48,9 +54,9 @@ const Navigation = () => {
 
   return (
     <header>
-      <nav className="fixed top-5 right-0 left-0 z-[9] mx-auto flex w-full max-w-fit items-center rounded-full border border-hairline bg-surface p-1.5 shadow-[var(--shadow-soft)] select-none max-[780px]:top-0 max-[780px]:max-w-full max-[780px]:items-start max-[780px]:rounded-none max-[780px]:border-x-0 max-[780px]:border-t-0 max-[780px]:p-3 max-[780px]:shadow-none">
+      <nav className="fixed top-5 right-0 left-0 z-[9] mx-auto flex w-full max-w-fit items-center rounded-full border border-hairline bg-surface p-1.5 shadow-[var(--shadow-soft)] select-none max-[780px]:top-0 max-[780px]:max-w-full max-[780px]:justify-between max-[780px]:rounded-none max-[780px]:border-x-0 max-[780px]:border-t-0 max-[780px]:p-3 max-[780px]:shadow-none">
         <button
-          className="hidden cursor-pointer items-center justify-center rounded-full p-2 text-text transition-colors duration-200 hover:bg-accent-soft max-[780px]:flex"
+          className={`hidden ${iconButtonClasses} max-[780px]:flex`}
           onClick={handleButton}
           aria-label="Toggle menu"
         >
@@ -104,6 +110,20 @@ const Navigation = () => {
             </a>
           </li>
         </ul>
+        <span className="mx-1 h-5 w-px shrink-0 bg-hairline max-[780px]:hidden" />
+        <button
+          className={iconButtonClasses}
+          onClick={toggleTheme}
+          aria-label={
+            theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+          }
+        >
+          {theme === "dark" ? (
+            <FiSun className="h-5 w-5" />
+          ) : (
+            <FiMoon className="h-5 w-5" />
+          )}
+        </button>
       </nav>
     </header>
   );

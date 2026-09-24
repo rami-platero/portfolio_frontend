@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-lightblueviolet: #dcdfff;
   --color-blueviolet: #9da5ff;
@@ -53,6 +55,29 @@
     --scrollbar: #9092ff;
     --shadow-soft: 0 8px 30px rgba(19, 26, 48, 0.08);
     --shadow-portrait: rgba(72, 86, 133, 0.534) 0px 0px 20px;
+  }
+
+  html.dark {
+    --color-surface: #1e1e23;
+    --color-text: #ededf0;
+    --color-muted: rgba(237, 237, 240, 0.62);
+    --color-hairline: rgba(237, 237, 240, 0.12);
+    --color-outline: rgba(237, 237, 240, 0.28);
+    --color-fill: #ededf0;
+    --color-on-fill: #0b0b0d;
+    --color-accent: #9da5ff;
+    --color-accent-strong: #b0b7ff;
+    --color-accent-soft: #2a2732;
+    --color-accent-hover: #c5caff;
+    --color-card: #232329;
+    --color-card-hover: #2b2b33;
+    --color-footer: #08080a;
+
+    --page-top: #0b0b0d;
+    --page-bottom: #151519;
+    --scrollbar: #3f3f46;
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.6);
+    --shadow-portrait: rgba(157, 165, 255, 0.22) 0px 0px 25px;
   }
 
   *,
