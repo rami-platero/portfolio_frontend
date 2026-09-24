@@ -17,7 +17,7 @@ import PawsitiveAdoptingImage from "../../assets/img/pawsitiveadopting.png";
 import VNFImage from "../../assets/img/vnf.png";
 
 const imageClasses =
-  "mx-auto aspect-[2/1] w-full max-w-[600px] border border-black object-cover transition duration-200 ease-in-out";
+  "mx-auto aspect-[2/1] w-full max-w-[600px] border border-outline object-cover transition duration-200 ease-in-out";
 
 const infoClasses =
   "mx-auto flex w-full max-w-[500px] flex-col justify-between gap-4 p-4";
@@ -27,7 +27,7 @@ const toolsClasses = "flex justify-center gap-4 [&>svg]:h-10 [&>svg]:w-10";
 const buttonsClasses = "flex flex-wrap justify-center gap-4";
 
 const buttonClasses =
-  "flex w-fit items-center gap-2 rounded-2xl border border-black p-2 text-[0.8rem] font-semibold text-black no-underline transition duration-200 ease-in-out hover:bg-black hover:text-white [&>svg]:h-6 [&>svg]:w-6";
+  "flex w-fit items-center gap-2 rounded-2xl border border-outline p-2 text-[0.8rem] font-semibold text-text no-underline transition duration-200 ease-in-out hover:bg-fill hover:text-on-fill [&>svg]:h-6 [&>svg]:w-6";
 
 const Projects = () => {
   const { projectsRef } = useContext(scrollContext);
@@ -163,7 +163,7 @@ const Projects = () => {
             VIP NCS Fans is an app made for a community of fans of the record
             label{" "}
             <a
-              className="font-semibold text-black transition duration-200 ease-in-out hover:text-[rgba(49,35,255,0.562)]"
+              className="font-semibold text-text transition duration-200 ease-in-out hover:text-accent-hover"
               href="https://www.youtube.com/@NoCopyrightSounds"
               target="_blank"
             >

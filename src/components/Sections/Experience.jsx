@@ -26,13 +26,13 @@ const Experience = () => {
       ref={experienceRef}
     >
       <h2 className="mb-12 text-[2.5rem] font-bold">Work Experience</h2>
-      <article className="w-full max-w-[800px] rounded-2xl border border-darkcolor/10 bg-white p-6 text-left shadow-[0_8px_30px_rgba(19,26,48,0.08)] sm:p-8">
+      <article className="w-full max-w-[800px] rounded-2xl border border-hairline bg-surface p-6 text-left shadow-[var(--shadow-soft)] sm:p-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h3 className="text-[1.5rem] font-bold">Full Stack Developer</h3>
-            <p className="mt-1 font-semibold text-blueviolet2">Novabit</p>
+            <p className="mt-1 font-semibold text-accent">Novabit</p>
           </div>
-          <span className="rounded-full bg-lightblueviolet px-3 py-1 text-[0.8rem] font-semibold text-darkcolor">
+          <span className="rounded-full bg-accent-soft px-3 py-1 text-[0.8rem] font-semibold text-text">
             May 2026 — Present
           </span>
         </div>
@@ -56,7 +56,7 @@ const Experience = () => {
         <div className="mt-6 flex flex-wrap gap-2">
           {stack.map((tool) => (
             <span
-              className="rounded-full border border-darkcolor/10 px-3 py-1 text-[0.75rem] font-semibold text-darkcolor/80"
+              className="rounded-full border border-hairline px-3 py-1 text-[0.75rem] font-semibold text-muted"
               key={tool}
             >
               {tool}
