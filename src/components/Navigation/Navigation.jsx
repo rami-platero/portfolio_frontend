@@ -20,7 +20,8 @@ const linkClasses =
   "block cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-darkcolor/70 no-underline transition-colors duration-200 hover:bg-lightblueviolet hover:text-darkcolor max-[780px]:px-3 max-[780px]:py-2 max-[780px]:text-base";
 
 const Navigation = () => {
-  const { projectsRef, skillsRef, contactRef } = useContext(scrollContext);
+  const { projectsRef, skillsRef, experienceRef, contactRef } =
+    useContext(scrollContext);
   const [isOpen, setIsOpen] = useState(false);
   const [animationState, setAnimationState] = useState(AnimationState.closed);
 
@@ -80,6 +81,16 @@ const Navigation = () => {
               }}
             >
               Skills
+            </a>
+          </li>
+          <li>
+            <a
+              className={linkClasses}
+              onClick={(e) => {
+                handleScroll(e, experienceRef);
+              }}
+            >
+              Experience
             </a>
           </li>
           <li>
