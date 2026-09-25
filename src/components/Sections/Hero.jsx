@@ -1,5 +1,5 @@
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import PFP from "../../assets/img/pfp.png";
+import { socials } from "../../data/socials";
 
 const Hero = () => {
   return (
@@ -17,20 +17,17 @@ const Hero = () => {
           and design of user-friendly interfaces.
         </p>
         <div className="flex gap-4">
-          <a
-            className="text-text no-underline transition duration-200 ease-in-out hover:text-darkblueviolet"
-            href="https://linkedin.com/in/ramiro-platero-9b679b279"
-            target="_blank"
-          >
-            <AiFillLinkedin className="h-8 w-8 cursor-pointer" />
-          </a>
-          <a
-            className="text-text no-underline transition duration-200 ease-in-out hover:text-darkblueviolet"
-            href="https://github.com/rami-platero"
-            target="_blank"
-          >
-            <AiFillGithub className="h-8 w-8 cursor-pointer" />
-          </a>
+          {socials.map(({ name, Icon, href }) => (
+            <a
+              className="text-text no-underline transition duration-200 ease-in-out hover:text-darkblueviolet"
+              href={href}
+              key={name}
+              target="_blank"
+              aria-label={name}
+            >
+              <Icon className="h-8 w-8 cursor-pointer" />
+            </a>
+          ))}
         </div>
       </div>
       <div className="mx-auto">

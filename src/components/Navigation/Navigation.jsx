@@ -3,6 +3,7 @@ import { FiMoon, FiSun } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { scrollContext } from "../../context/ScrollContext";
+import { navLinks } from "../../data/navigation";
 import { useTheme } from "../../hooks/useTheme";
 
 const AnimationState = {
@@ -25,8 +26,7 @@ const iconButtonClasses =
   "flex cursor-pointer items-center justify-center rounded-full p-2 text-text transition-colors duration-200 hover:bg-accent-soft";
 
 const Navigation = () => {
-  const { projectsRef, skillsRef, experienceRef, contactRef } =
-    useContext(scrollContext);
+  const refs = useContext(scrollContext);
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [animationState, setAnimationState] = useState(AnimationState.closed);
@@ -69,46 +69,18 @@ const Navigation = () => {
         <ul
           className={`flex w-full list-none items-center gap-1 max-[780px]:absolute max-[780px]:top-full max-[780px]:left-0 max-[780px]:mt-2 max-[780px]:w-full max-[780px]:flex-col max-[780px]:items-stretch max-[780px]:rounded-2xl max-[780px]:border max-[780px]:border-hairline max-[780px]:bg-surface max-[780px]:p-2 max-[780px]:shadow-[var(--shadow-soft)] ${menuAnimation[animationState]}`}
         >
-          <li>
-            <a
-              className={linkClasses}
-              onClick={(e) => {
-                handleScroll(e, projectsRef);
-              }}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              className={linkClasses}
-              onClick={(e) => {
-                handleScroll(e, skillsRef);
-              }}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              className={linkClasses}
-              onClick={(e) => {
-                handleScroll(e, experienceRef);
-              }}
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              className={linkClasses}
-              onClick={(e) => {
-                handleScroll(e, contactRef);
-              }}
-            >
-              Contact
-            </a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                className={linkClasses}
+                onClick={(e) => {
+                  handleScroll(e, refs[link.ref]);
+                }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
         <span className="mx-1 h-5 w-px shrink-0 bg-hairline max-[780px]:hidden" />
         <button
