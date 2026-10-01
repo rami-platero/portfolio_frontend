@@ -13,7 +13,7 @@ const infoClasses =
 const toolsClasses = "flex justify-center gap-4 [&>svg]:h-10 [&>svg]:w-10";
 
 const buttonClasses =
-  "flex w-fit items-center gap-2 rounded-2xl border border-outline p-2 text-[0.8rem] font-semibold text-text no-underline transition duration-200 ease-in-out hover:bg-fill hover:text-on-fill [&>svg]:h-6 [&>svg]:w-6";
+  "flex w-fit items-center gap-2 rounded-2xl border border-outline p-2 text-[0.8rem] font-semibold text-text no-underline transition duration-200 ease-in-out hover:bg-fill hover:text-on-fill focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 [&>svg]:h-6 [&>svg]:w-6";
 
 const Projects = () => {
   const { projectsRef } = useContext(scrollContext);
@@ -28,14 +28,16 @@ const Projects = () => {
           <img
             className={imageClasses}
             src={project.image}
+            width={project.width}
+            height={project.height}
             alt={project.title}
           />
           <div className={infoClasses}>
             <h3 className="text-[1.5rem] font-bold">{project.title}</h3>
             <p className="text-left">{project.description}</p>
             <div className={toolsClasses}>
-              {project.tools.map((Tool, index) => (
-                <Tool key={index} />
+              {project.tools.map(({ name, Icon }) => (
+                <Icon key={name} />
               ))}
             </div>
             <div className="flex flex-wrap justify-center gap-4">
@@ -43,17 +45,21 @@ const Projects = () => {
                 className={buttonClasses}
                 href={project.demo}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <RxOpenInNewWindow />
                 Live Demo
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
               <a
                 className={buttonClasses}
                 href={project.source}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <AiFillGithub />
                 Code Source
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
           </div>

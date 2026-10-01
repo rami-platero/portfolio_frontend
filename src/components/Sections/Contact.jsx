@@ -3,7 +3,7 @@ import { scrollContext } from "../../context/ScrollContext";
 import { contactOptions } from "../../data/contact";
 
 const cardClasses =
-  "grid w-full max-w-[250px] grid-cols-[50px_1fr] grid-rows-[1fr_1fr] p-2 text-left no-underline bg-card transition duration-200 ease-in-out hover:bg-card-hover";
+  "grid w-full max-w-[250px] grid-cols-[50px_1fr] grid-rows-[1fr_1fr] p-2 text-left no-underline bg-card transition duration-200 ease-in-out hover:bg-card-hover focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2";
 
 const iconClasses = "row-span-2 h-10 w-10 rounded-full p-[0.3rem] text-text";
 
@@ -28,10 +28,14 @@ const Contact = () => {
             href={href}
             key={value}
             target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
           >
             <Icon className={iconClasses} />
-            <h4 className={labelClasses}>{label}</h4>
-            <h4 className="text-[0.9rem] font-semibold text-accent">{value}</h4>
+            <span className={labelClasses}>{label}</span>
+            <span className="text-[0.9rem] font-semibold text-accent">
+              {value}
+              {external && <span className="sr-only"> (opens in a new tab)</span>}
+            </span>
           </a>
         ))}
       </div>

@@ -6,7 +6,10 @@ import Skills from "./Sections/Skills";
 
 const Portfolio = () => {
   return (
-    <main className="flex w-full max-w-[1400px] flex-col gap-[150px] p-4">
+    <main
+      className="flex w-full max-w-[1400px] flex-col gap-[150px] p-4"
+      id="main-content"
+    >
       <Hero />
       <Skills />
       <Experience />

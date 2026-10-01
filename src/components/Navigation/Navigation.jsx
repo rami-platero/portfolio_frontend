@@ -20,10 +20,10 @@ const menuAnimation = {
 };
 
 const linkClasses =
-  "block cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-muted no-underline transition-colors duration-200 hover:bg-accent-soft hover:text-text max-[780px]:px-3 max-[780px]:py-2 max-[780px]:text-base";
+  "block w-full cursor-pointer rounded-full px-4 py-1.5 text-left text-sm font-medium text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-text focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 max-[780px]:px-3 max-[780px]:py-2 max-[780px]:text-base";
 
 const iconButtonClasses =
-  "flex cursor-pointer items-center justify-center rounded-full p-2 text-text transition-colors duration-200 hover:bg-accent-soft";
+  "flex cursor-pointer items-center justify-center rounded-full p-2 text-text transition-colors duration-200 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2";
 
 const Navigation = () => {
   const refs = useContext(scrollContext);
@@ -43,12 +43,17 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = (e, ref) => {
-    e.preventDefault();
+  const handleScroll = (ref) => {
     handleButton();
 
     if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      ref.current.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "center",
+      });
     }
   };
 
@@ -58,6 +63,7 @@ const Navigation = () => {
         <button
           className={`hidden ${iconButtonClasses} max-[780px]:flex`}
           onClick={handleButton}
+          type="button"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -71,14 +77,15 @@ const Navigation = () => {
         >
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
+              <button
                 className={linkClasses}
-                onClick={(e) => {
-                  handleScroll(e, refs[link.ref]);
+                onClick={() => {
+                  handleScroll(refs[link.ref]);
                 }}
+                type="button"
               >
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -86,6 +93,7 @@ const Navigation = () => {
         <button
           className={iconButtonClasses}
           onClick={toggleTheme}
+          type="button"
           aria-label={
             theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
           }

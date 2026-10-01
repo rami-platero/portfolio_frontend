@@ -17,7 +17,7 @@
   --color-outline: #000000;
   --color-fill: #000000;
   --color-on-fill: #ffffff;
-  --color-accent: #4a56dd;
+  --color-accent: #3f47c2;
   --color-accent-strong: rgb(63, 37, 211);
   --color-accent-soft: #dcdfff;
   --color-accent-hover: rgba(49, 35, 255, 0.562);
@@ -120,5 +120,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --animate-slide-in: none;
+      --animate-slide-out: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
