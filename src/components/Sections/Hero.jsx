@@ -11,7 +11,7 @@ const Hero = () => {
           </p>
           <h1 className="text-[2.7rem] font-bold">I am a Full-Stack Developer</h1>
         </div>
-        <p className="max-w-[600px]">
+        <p className="max-w-150">
           My name is Ramiro Platero and I'm focused in the web development,
           specializing in the frontend and dedicated on the solution of problems
           and design of user-friendly interfaces.
@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
       <div className="mx-auto">
         <img
-          className="w-full max-w-[470px] rounded-full shadow-[var(--shadow-portrait)]"
+          className="w-full max-w-117.5 rounded-full shadow-(--shadow-portrait)"
           src={PFP}
           width={948}
           height={920}

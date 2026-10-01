@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="mt-[150px] flex h-[150px] w-full items-center justify-center bg-footer font-extralight text-footer-text">
+    <footer className="mt-37.5 flex h-37.5 w-full items-center justify-center bg-footer font-extralight text-footer-text">
       <p>© {year} Ramiro Platero. All rights reserved.</p>
     </footer>
   );

@@ -12,7 +12,7 @@ const Experience = () => {
       <h2 className="mb-4 text-[2.5rem] font-bold">Work Experience</h2>
       {experience.map((job) => (
         <article
-          className="w-full max-w-[800px] rounded-2xl border border-hairline bg-surface p-6 text-left shadow-[var(--shadow-soft)] sm:p-8"
+          className="w-full max-w-200 rounded-2xl border border-hairline bg-surface p-6 text-left shadow-(--shadow-soft) sm:p-8"
           key={`${job.company}-${job.role}`}
         >
           <div className="flex flex-wrap items-center justify-between gap-3">

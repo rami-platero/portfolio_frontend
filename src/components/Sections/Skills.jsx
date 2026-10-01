@@ -11,7 +11,7 @@ const Skills = () => {
       ref={skillsRef}
     >
       <h2 className="mb-12 text-[2.5rem] font-bold">Skills</h2>
-      <div className="grid w-full max-w-[650px] grid-cols-[repeat(auto-fit,minmax(40px,1fr))] grid-rows-[1fr_1fr] gap-12">
+      <div className="grid w-full max-w-162.5 grid-cols-[repeat(auto-fit,minmax(--spacing(10),1fr))] grid-rows-[1fr_1fr] gap-12">
         {skills.map(({ name, Icon }) => (
           <Skill key={name} tooltip={name}>
             <Icon />

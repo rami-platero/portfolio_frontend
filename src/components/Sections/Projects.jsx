@@ -5,10 +5,10 @@ import { scrollContext } from "../../context/ScrollContext";
 import { projects } from "../../data/projects";
 
 const imageClasses =
-  "mx-auto aspect-[2/1] w-full max-w-[600px] border border-outline object-cover transition duration-200 ease-in-out dark:brightness-[0.85]";
+  "mx-auto aspect-2/1 w-full max-w-150 border border-outline object-cover transition duration-200 ease-in-out dark:brightness-85";
 
 const infoClasses =
-  "mx-auto flex w-full max-w-[500px] flex-col justify-between gap-4 p-4";
+  "mx-auto flex w-full max-w-125 flex-col justify-between gap-4 p-4";
 
 const toolsClasses = "flex justify-center gap-4 [&>svg]:h-10 [&>svg]:w-10";
 

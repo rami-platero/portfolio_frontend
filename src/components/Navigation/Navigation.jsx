@@ -59,7 +59,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <nav className="fixed top-5 right-0 left-0 z-[9] mx-auto flex w-full max-w-fit items-center rounded-full border border-hairline bg-surface p-1.5 shadow-[var(--shadow-soft)] select-none max-[780px]:top-0 max-[780px]:max-w-full max-[780px]:justify-between max-[780px]:rounded-none max-[780px]:border-x-0 max-[780px]:border-t-0 max-[780px]:p-3 max-[780px]:shadow-none">
+      <nav className="fixed top-5 right-0 left-0 z-9 mx-auto flex w-full max-w-fit items-center rounded-full border border-hairline bg-surface p-1.5 shadow-(--shadow-soft) select-none max-[780px]:top-0 max-[780px]:max-w-full max-[780px]:justify-between max-[780px]:rounded-none max-[780px]:border-x-0 max-[780px]:border-t-0 max-[780px]:p-3 max-[780px]:shadow-none">
         <button
           className={`hidden ${iconButtonClasses} max-[780px]:flex`}
           onClick={handleButton}
@@ -73,7 +73,7 @@ const Navigation = () => {
           )}
         </button>
         <ul
-          className={`flex w-full list-none items-center gap-1 max-[780px]:absolute max-[780px]:top-full max-[780px]:left-0 max-[780px]:mt-2 max-[780px]:w-full max-[780px]:flex-col max-[780px]:items-stretch max-[780px]:rounded-2xl max-[780px]:border max-[780px]:border-hairline max-[780px]:bg-surface max-[780px]:p-2 max-[780px]:shadow-[var(--shadow-soft)] ${menuAnimation[animationState]}`}
+          className={`flex w-full list-none items-center gap-1 max-[780px]:absolute max-[780px]:top-full max-[780px]:left-0 max-[780px]:mt-2 max-[780px]:w-full max-[780px]:flex-col max-[780px]:items-stretch max-[780px]:rounded-2xl max-[780px]:border max-[780px]:border-hairline max-[780px]:bg-surface max-[780px]:p-2 max-[780px]:shadow-(--shadow-soft) ${menuAnimation[animationState]}`}
         >
           {navLinks.map((link) => (
             <li key={link.label}>

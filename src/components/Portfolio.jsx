@@ -7,7 +7,7 @@ import Skills from "./Sections/Skills";
 const Portfolio = () => {
   return (
     <main
-      className="flex w-full max-w-[1400px] flex-col gap-[150px] p-4"
+      className="flex w-full max-w-350 flex-col gap-37.5 p-4"
       id="main-content"
     >
       <Hero />

@@ -3,7 +3,7 @@ import { scrollContext } from "../../context/ScrollContext";
 import { contactOptions } from "../../data/contact";
 
 const cardClasses =
-  "grid w-full max-w-[250px] grid-cols-[50px_1fr] grid-rows-[1fr_1fr] p-2 text-left no-underline bg-card transition duration-200 ease-in-out hover:bg-card-hover focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2";
+  "grid w-full max-w-62.5 grid-cols-[--spacing(12.5)_1fr] grid-rows-[1fr_1fr] p-2 text-left no-underline bg-card transition duration-200 ease-in-out hover:bg-card-hover focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2";
 
 const iconClasses = "row-span-2 h-10 w-10 rounded-full p-[0.3rem] text-text";
 
@@ -13,7 +13,7 @@ const Contact = () => {
   const { contactRef } = useContext(scrollContext);
   return (
     <section
-      className="mt-[50px] flex flex-col justify-center gap-8 text-center"
+      className="mt-12.5 flex flex-col justify-center gap-8 text-center"
       ref={contactRef}
     >
       <h2 className="text-[2.5rem] font-bold">Contact Me</h2>
